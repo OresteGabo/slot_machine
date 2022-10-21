@@ -1,16 +1,25 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# La fonction pour faire un dépot
+# Le montant doit etre positif
+def deposit():
+    """
+
+    :rtype: Return int
+    """
+    while True:
+        amount =input("Combien souhaitez-vous déposer $")
+        if amount.isdigit():
+            amount=int(amount)
+            if amount >= 0:
+                break
+            else:
+                print("Le montant doit etre superieur à 0")
+        else:
+            print("Le montant doit etre numerique")
+    return amount
 
 
-# Press the green button in the gutter to run the script.
+
 if __name__ == '__main__':
-    print_hi('Oreste')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    deposit()
