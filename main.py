@@ -1,5 +1,8 @@
 
 NOMBRE_LIGNES_MAX = 3
+PARI_MAX = 100
+PARI_MIN = 1
+
 # La fonction pour faire un dépot
 # Le montant doit etre positif
 def depot():
@@ -38,11 +41,24 @@ def get_nombre_lignes():
             print("Le montant doit etre numerique")
     return lignes
 
+def get_pari():
+    while True:
+        montant = input("Saisissez le montant de pari svp ("+ str(PARI_MIN)+ "-"+ str(PARI_MAX)+ ")$")
+        if montant.isdigit():
+            montant = int(montant)
+            if PARI_MIN <= montant <= PARI_MAX:
+                break
+            else:
+                print(f"Le pari doit etre entre ${PARI_MIN} - {PARI_MAX} .")
+        else:
+            print("Le montant doit etre un nombre.")
+    return montant
 
 
 def main():
     balance=depot()
     lignes=get_nombre_lignes()
+    pari=get_pari()
     print(balance,lignes)
 
 
