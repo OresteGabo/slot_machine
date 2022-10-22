@@ -59,7 +59,9 @@ def main():
     balance=depot()
     lignes=get_nombre_lignes()
     pari=get_pari()
-    print(balance,lignes)
+    total = pari * lignes
+    print(f"Vous avez parier £{pari} sur {lignes} lignes. Le parit total devient £{total}")
+
 
 
 main()
